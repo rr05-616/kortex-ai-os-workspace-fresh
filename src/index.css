@@ -1,0 +1,305 @@
+/* DO NOT CHANGE */
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+/* DO NOT CHANGE */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KORTEX AI — Dark Royal Green Glassmorphism Design System
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --radius: 1rem;
+  --background: #040705;
+  --foreground: #E8F5EE;
+  --card: rgba(255, 255, 255, 0.018);
+  --card-foreground: #E8F5EE;
+  --popover: rgba(7, 18, 13, 0.9);
+  --popover-foreground: #E8F5EE;
+  --primary: #0E9F6E;
+  --primary-foreground: #FFFFFF;
+  --secondary: rgba(14, 159, 110, 0.12);
+  --secondary-foreground: #18C37E;
+  --muted: rgba(255, 255, 255, 0.04);
+  --muted-foreground: rgba(232, 245, 238, 0.45);
+  --accent: rgba(14, 159, 110, 0.08);
+  --accent-foreground: #18C37E;
+  --destructive: #E74C3C;
+  --border: rgba(255, 255, 255, 0.06);
+  --input: rgba(255, 255, 255, 0.06);
+  --ring: #0E9F6E;
+  --chart-1: #0E9F6E;
+  --chart-2: #2ECC71;
+  --chart-3: #18C37E;
+  --chart-4: #34D399;
+  --chart-5: #0C8A5F;
+  --sidebar: rgba(7, 18, 13, 0.8);
+  --sidebar-foreground: #E8F5EE;
+  --sidebar-primary: #0E9F6E;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(14, 159, 110, 0.12);
+  --sidebar-accent-foreground: #18C37E;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: #0E9F6E;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KORTEX AI — Utility Classes
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer utilities {
+  /* Glass surfaces */
+  .glass {
+    background: rgba(255, 255, 255, 0.018);
+    backdrop-filter: blur(45px) saturate(180%);
+    -webkit-backdrop-filter: blur(45px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+  }
+  .glass:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(14, 159, 110, 0.12);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(45px) saturate(180%);
+    -webkit-backdrop-filter: blur(45px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: rgba(14, 159, 110, 0.15);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(14, 159, 110, 0.05), inset 0 1px rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+  }
+  .glass-strong {
+    background: rgba(7, 18, 13, 0.6);
+    backdrop-filter: blur(45px) saturate(180%);
+    -webkit-backdrop-filter: blur(45px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.06);
+  }
+  .glass-input {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.2s;
+  }
+  .glass-input:focus {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(14, 159, 110, 0.3);
+    box-shadow: 0 0 0 2px rgba(14, 159, 110, 0.1);
+  }
+
+  /* Liquid Glass Button */
+  .btn-liquid {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #E8F5EE;
+    background: rgba(14, 159, 110, 0.15);
+    border: 1px solid rgba(14, 159, 110, 0.25);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(14, 159, 110, 0.1), inset 0 1px rgba(255, 255, 255, 0.06);
+  }
+  .btn-liquid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), transparent);
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+  }
+  .btn-liquid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(14, 159, 110, 0.2), rgba(30, 204, 113, 0.1));
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  .btn-liquid:hover {
+    background: rgba(14, 159, 110, 0.22);
+    border-color: rgba(14, 159, 110, 0.4);
+    box-shadow: 0 8px 30px rgba(14, 159, 110, 0.15), inset 0 1px rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+  .btn-liquid:hover::after {
+    opacity: 1;
+  }
+  .btn-liquid:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 0 2px 10px rgba(14, 159, 110, 0.1);
+  }
+  .btn-liquid-solid {
+    background: #0E9F6E;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(14, 159, 110, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  }
+  .btn-liquid-solid::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), transparent);
+  }
+  .btn-liquid-solid:hover {
+    background: #18C37E;
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(14, 159, 110, 0.3), inset 0 1px rgba(255, 255, 255, 0.12);
+  }
+  .btn-liquid-ghost {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  .btn-liquid-ghost::before {
+    display: none;
+  }
+  .btn-liquid-ghost:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Glow border effect */
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(14, 159, 110, 0.3), rgba(14, 159, 110, 0.05), rgba(14, 159, 110, 0.2));
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: -1;
+    filter: blur(4px);
+  }
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Text utilities */
+  .text-gradient-green {
+    background: linear-gradient(135deg, #0E9F6E 0%, #34D399 50%, #18C37E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-glow-green {
+    text-shadow: 0 0 20px rgba(14, 159, 110, 0.3);
+  }
+
+  /* Background patterns */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .bg-dot-pattern {
+    background-image: radial-gradient(rgba(14, 159, 110, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Animated word cycle */
+  @keyframes word-cycle {
+    0%, 100% { transform: translateY(0%); opacity: 1; }
+    18% { transform: translateY(0%); opacity: 1; }
+    22% { transform: translateY(-100%); opacity: 0; }
+    78% { transform: translateY(100%); opacity: 0; }
+    82% { transform: translateY(0%); opacity: 1; }
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(14, 159, 110, 0.25);
+  color: #E8F5EE;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid rgba(14, 159, 110, 0.5);
+  outline-offset: 2px;
+}

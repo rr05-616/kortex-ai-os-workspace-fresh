@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18C37E" />
+      <stop offset="100%" stop-color="#0E9F6E" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Outer rounded rectangle with dark background -->
+  <rect x="16" y="16" width="480" height="480" rx="100" ry="100" fill="#050D08" />
+  <rect x="16" y="16" width="480" height="480" rx="100" ry="100" stroke="rgba(14,159,110,0.15)" stroke-width="2" fill="none" />
+  <!-- The K / Play button shape -->
+  <g filter="url(#glow)">
+    <!-- Left vertical bar -->
+    <rect x="148" y="148" width="48" height="216" rx="8" fill="url(#grad1)" opacity="0.9" />
+    <!-- Upper diagonal arm (going up-right) -->
+    <polygon points="196,256 196,148 364,256" fill="url(#grad1)" opacity="0.9" />
+    <!-- Lower diagonal arm (going down-right) -->
+    <polygon points="196,256 196,364 364,256" fill="url(#grad1)" opacity="0.8" />
+  </g>
+  <!-- Subtle inner highlight on the left bar -->
+  <rect x="148" y="148" width="48" height="216" rx="8" fill="rgba(255,255,255,0.12)" />
+</svg>
